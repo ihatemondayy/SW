@@ -11,7 +11,6 @@ public class BookManager {
                 throw new IllegalArgumentException("해당 ID(" + id + ")는 이미 존재합니다");
             }
         }
-		
 		Book newBook = new Book();
 		newBook.setId(id);
 		newBook.setName(name);
