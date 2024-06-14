@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages() {
+        stage('git clone') {
+            steps() {
+                git 'https://github.com/ihatemondayy/SW.git'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+
+        stage('execute sh') {
+            steps {
+                sh 'ls -al'
+                sh 'echo "Hello World" > test_results.txt'
+            }
+        }
+    }
+}
