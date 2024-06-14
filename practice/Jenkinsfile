@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                classpath="classes:lib/*:path/to/eclipse/plugins/junit-platform-console-standalone-1.7.1.jar"
+                classpath="classes:lib/*:/Users/eunjung/.jenkins/workspace/SWpractice/lib/JUnit Platform Console 1.7.1.jar"
                 java -cp $classpath org.junit.platform.console.ConsoleLauncher --scan-classpath > test_results.txt
                 '''
             }
