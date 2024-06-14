@@ -7,7 +7,8 @@ public class main {
 		for(int i = 1;i<=20;i++) {
 			bm.AddBook(i, "name" + i, "author" + i, i+2000);
 		}
-		bm.SearchBook(1);
+		bm.SearchBook(20);
+		bm.search_bs(20);
 	}
 
 }

@@ -48,4 +48,25 @@ public class BookManager {
         }
 		throw new IllegalArgumentException("해당 ID(" + id + ")의 도서를 찾을 수 없습니다.");
 	}
+	
+	public Book search_bs(int id) {
+	    int left = 0;
+	    int right = books.size() - 1;
+	    
+	    while (left <= right) {
+	        int middle = (left + right) / 2;
+
+	        if (books.get(middle).getId() == id) {
+	            System.out.println("검색 결과 : ");
+	            System.out.println(books.get(middle));
+	            return books.get(middle);
+	        } else if (books.get(middle).getId() < id) {
+	            left = middle + 1;
+	        } else {
+	            right = middle - 1;
+	        }
+	    }
+	    
+	    throw new IllegalArgumentException("검색된 도서가 없습니다.");
+	}
 }
