@@ -13,7 +13,7 @@ public class BookManager {
 	public void AddBook(int id, String name, String author, int year) {
 		for (Book book : books) {
             if (book.getId() == id) {
-                System.out.println("해당 ID(" + id + ")는 이미 존재합니다");
+                // System.out.println("해당 ID(" + id + ")는 이미 존재합니다");
                 throw new IllegalArgumentException("해당 ID(" + id + ")는 이미 존재합니다");
             }
         }
@@ -24,14 +24,14 @@ public class BookManager {
 		newBook.setAuthor(author);
 		newBook.setPublicationYear(year);
 		books.add(newBook);
-		System.out.println(newBook + " 도서가 추가되었습니다.");
+		// System.out.println(newBook + " 도서가 추가되었습니다.");
 	}
 	
 	public Book SearchBook(int id) {
 		for (Book book : books) {
             if (book.getId() == id) {
-            	System.out.println("검색 결과 : ");
-                System.out.println(book);
+            	// System.out.println("검색 결과 : ");
+                // System.out.println(book);
                 return book;
             }
         }
@@ -42,7 +42,7 @@ public class BookManager {
 	public void RemoveBook(int id) {
 		for (Book book : books) {
             if (book.getId() == id) {
-            	System.out.println(book + " 도서가 삭제되었습니다.");
+            	// System.out.println(book + " 도서가 삭제되었습니다.");
                 books.remove(book);
             }
         }
@@ -57,8 +57,8 @@ public class BookManager {
 	        int middle = (left + right) / 2;
 
 	        if (books.get(middle).getId() == id) {
-	            System.out.println("검색 결과 : ");
-	            System.out.println(books.get(middle));
+	            // System.out.println("검색 결과 : ");
+	            // System.out.println(books.get(middle));
 	            return books.get(middle);
 	        } else if (books.get(middle).getId() < id) {
 	            left = middle + 1;
